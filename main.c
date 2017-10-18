@@ -17,10 +17,6 @@ int main(int argc, char *argv[])
             strcpy(mat1Name ,argv[1]);
             strcpy(mat2Name ,argv[2]);
             strcpy(outMatName ,argv[3]);
-//            printf("%s \n" , mat1Name);
-//            printf("%s \n" , mat2Name);
-//            printf("%s \n" , outMatName);
-
 
         }
         else {      //user didn't enter file names or entered incorrect number of parameters
@@ -31,9 +27,6 @@ int main(int argc, char *argv[])
             strcpy(mat1Name ,"a.txt");
             strcpy(mat2Name ,"b.txt");
             strcpy(outMatName ,"c.out");
-//            printf("%s \n" , mat1Name);
-//            printf("%s \n" , mat2Name);
-//            printf("%s \n" , outMatName);
 
         }
 
