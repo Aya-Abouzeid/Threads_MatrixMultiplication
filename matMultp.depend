@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1508285571 source:/home/aya/Desktop/Projects/matMultp/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"read_from_files.h"
+
+1508281902 source:/home/aya/Desktop/Projects/matMultp/matMult.cpp
+	"matMult.h"
+
+1508281975 /home/aya/Desktop/Projects/matMultp/include/matMult.h
+
+1508281894 source:/home/aya/Desktop/Projects/matMultp/Method1.cpp
+	"Method1.h"
+
+1508184582 /home/aya/Desktop/Projects/matMultp/include/Method1.h
+
+1508281322 source:/home/aya/Desktop/Projects/matMultp/Method2.cpp
+	"Method2.h"
+
+1508281981 /home/aya/Desktop/Projects/matMultp/include/Method2.h
+
+1508281898 source:/home/aya/Desktop/Projects/matMultp/output_to_file.cpp
+	"output_to_file.h"
+
+1508281986 /home/aya/Desktop/Projects/matMultp/include/output_to_file.h
+
+1508285552 /home/aya/Desktop/Projects/matMultp/include/read_from_files.h
+
+1508285579 source:/home/aya/Desktop/Projects/matMultp/read_from_files.cpp
+	"read_from_files.h"
+
