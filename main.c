@@ -6,6 +6,7 @@
 char *mat1Name;       //first matrix name
 char *mat2Name;       //second matrix name
 char *outMatName;     //output matrix name
+void readMatrices(char *mat1 , char *mat2);
 int main(int argc, char *argv[])
 {
 
