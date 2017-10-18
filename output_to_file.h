@@ -1,4 +1,4 @@
-//#ifndef OUTPUT_TO_FILE_H
+#ifndef OUTPUT_TO_FILE_H
 #define OUTPUT_TO_FILE_H
 
 
@@ -11,4 +11,4 @@
 //    private:
 //};
 //
-//#endif // OUTPUT_TO_FILE_H
+#endif // OUTPUT_TO_FILE_H

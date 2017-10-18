@@ -1,11 +1,11 @@
 #include "output_to_file.h"
 
-//output_to_file::output_to_file()
-//{
-//    //ctor
+
+//void writeFile1(){              //output the answer of the first method
+//
 //}
 //
-//output_to_file::~output_to_file()
-//{
-//    //dtor
+//
+//void writeFile2(){              //output the answer of the second method
+//
 //}

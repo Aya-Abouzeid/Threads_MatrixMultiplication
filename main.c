@@ -1,12 +1,14 @@
+#include "read_from_files.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "read_from_files.h"
+#define _GNU_SOURCE
+
 
 char *mat1Name;       //first matrix name
 char *mat2Name;       //second matrix name
 char *outMatName;     //output matrix name
-void readMatrices(char *mat1 , char *mat2);
+
 int main(int argc, char *argv[])
 {
 
@@ -31,7 +33,7 @@ int main(int argc, char *argv[])
 
         }
 
-        readMatrices(mat1Name , mat2Name);
+         readMatrices(mat1Name , mat2Name);  //reading the 2 matrices files
 
     return 0;
 }
