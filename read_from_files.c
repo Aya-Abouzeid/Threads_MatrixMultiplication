@@ -48,7 +48,7 @@ void readMatA(char *mat){        //reading first matrix
         }
         else {
                 fgets(line, 1024, matAFile);
-                split(1);                   //extract number of columns and rows
+                getDimentions(1);                   //extract number of columns and rows
                 matA = malloc(aRows * sizeof(long long *));
                 int r = 0, c = 0;
                 for(r ; r < aRows ; r++) {
@@ -69,7 +69,7 @@ void readMatB(char *mat){        //reading second matrix
         }
         else {
                 fgets(line, 1024, matBFile);
-                split(2);                   //extract number of columns and rows
+                getDimentions(2);                   //extract number of columns and rows
                 matB = malloc(bRows * sizeof(long long *));
                 int r = 0, c = 0;
                 for(r ; r < bRows ; r++) {
@@ -82,7 +82,7 @@ void readMatB(char *mat){        //reading second matrix
                 fclose(matBFile);
         }
 }
-void split(int matrix){                       // split first line of file to get the matrices size , int matrix
+void getDimentions(int matrix){                       // split first line of file to get the matrices size , int matrix
 
         int i;
         int reader =0;
@@ -91,7 +91,9 @@ void split(int matrix){                       // split first line of file to get
 
                 if(line[i]== '=' && reader ==0){        //reader =0 means reading the row number
                         i++;
-                        while(line[i] != ' ' && line[i] != '\0' && line[i] != '\n'){
+                        while(line[i] == ' ' || line[i] == '\t' )
+                            i++;
+                        while(line[i] != ' ' && line[i] != '\t' && line[i] != '\0' && line[i] != '\n'){
 
                             if(matrix == 1){        //reading rows of matA
                                 aRows *= 10;
@@ -107,7 +109,9 @@ void split(int matrix){                       // split first line of file to get
 
                 } else if(line[i]== '=' && reader ==1) {                                //reader = 1 meains reading th column number
                         i++;
-                        while(line[i] != ' ' && line[i] != '\0'  && line[i] != '\n' ){
+                        while(line[i] == ' ' || line[i] == '\t' )
+                            i++;
+                        while(line[i] != ' ' && line[i] != '\t' && line[i] != '\0'  && line[i] != '\n' ){
 
                             if(matrix == 1){            //reading columns of matA
                                 aColumns *= 10;

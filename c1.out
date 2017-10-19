@@ -1,0 +1,9 @@
+Multiplying row by row:
+
+ Number of threads used: 4
+ Execution time(ms): 82
+
+96  68  69  69  
+24  56  18  52  
+58  95  71  92  
+90  107  81  142  

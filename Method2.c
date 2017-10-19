@@ -48,7 +48,7 @@ void useMethod2(){               //use number of threads equal to number of elem
 
         printf("\n");
         }
-        pthread_exit(0);
+        return;
 
 }
 
