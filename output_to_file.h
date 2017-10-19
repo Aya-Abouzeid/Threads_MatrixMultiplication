@@ -2,13 +2,7 @@
 #define OUTPUT_TO_FILE_H
 
 
-//class output_to_file
-//{
-//    public:
-//        output_to_file();
-//        virtual ~output_to_file();
-//    protected:
-//    private:
-//};
-//
+        writeOutput1();             //print output of method 1 to file
+        writeOutput2();             //print output of method 2 to file
+
 #endif // OUTPUT_TO_FILE_H

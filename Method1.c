@@ -15,27 +15,46 @@ void useMethod1(){          //use number of threads equal to number of rows in t
 
         pthread_t threads[aRows];               // descriptors of threads
         int i;
-        for(i = 0; i < aRows; i++) {             // create threads
-//            if (pthread_create(&threads[i], NULL, multiply1, (void *)i))
-//            {
-//                printf("Can not create a thread\n");
-//                exit(1);
-//            }
+        for(i = 0; i < aRows; i++) {
+
+            if (pthread_create(&threads[i], NULL, multiply1, (void *)i))        // create threads
+            {
+                printf("Error creating thread %d\n" , i );
+                exit(-1);
+            }
         }
+        int j;
+        for (j = 0; j < aRows; j++) {
+                     pthread_join(threads[j], NULL);
+            }
+
+        int l=0 , m=0;
+        for(l ; l< aRows ; l++){
+            m=0;
+            for(m ; m<bColumns ; m++){
+                    printf("%lld  ", matCMethod1[l][m]);
+            }
+
+        printf("\n");
+        }
+        return;
 }
 
 void *multiply1(void *rowNumber){
+        int row = (int) rowNumber;
+        int sumOfProduct = 0;
+        int ColumnsIterator = 0;
+        int bRowsIterator = 0;
+        for(ColumnsIterator= 0 ; ColumnsIterator < bColumns ; ColumnsIterator++){
 
-//        for(bColumnsIterator=0 ; bColumnsIterator < bColumns ; bColumnsIterator++){
-//
-//                    sumOfProduct = 0;
-//                    for(bRowsIterator=0 ; bRowsIterator < bRows ; bRowsIterator++){
-//
-//                            sumOfProduct += matA[aRowsIterator][bRowsIterator] * matB[bRowsIterator][bColumnsIterator];
-//                    }
-//
-//                    matC[aRowsIterator][bColumnsIterator] = sumOfProduct;
-//        }
+                    sumOfProduct = 0;
+                    for(bRowsIterator=0 ; bRowsIterator < bRows ; bRowsIterator++){
+
+                            sumOfProduct += matA[row][bRowsIterator] * matB[bRowsIterator][ColumnsIterator];
+                    }
+
+                    matCMethod1[row][ColumnsIterator] = sumOfProduct;
+        }
 
 
 }

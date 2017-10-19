@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1508403203 source:/home/aya/Desktop/Projects/matMultp/main.c
+1508412312 source:/home/aya/Desktop/Projects/matMultp/main.c
 	"read_from_files.h"
+	"output_to_file.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -37,22 +38,22 @@
 
 1508394858 /home/aya/Desktop/Projects/matMultp/Method2.h
 
-1508340834 /home/aya/Desktop/Projects/matMultp/output_to_file.h
+1508409386 /home/aya/Desktop/Projects/matMultp/output_to_file.h
 
 1508394959 /home/aya/Desktop/Projects/matMultp/read_from_files.h
 
-1508403361 source:/home/aya/Desktop/Projects/matMultp/matMult.c
+1508408165 source:/home/aya/Desktop/Projects/matMultp/matMult.c
 	"matMult.h"
 
-1508403294 source:/home/aya/Desktop/Projects/matMultp/Method1.c
+1508412283 source:/home/aya/Desktop/Projects/matMultp/Method1.c
 	"Method1.h"
 	<pthread.h>
 
-1508403264 source:/home/aya/Desktop/Projects/matMultp/Method2.c
+1508412182 source:/home/aya/Desktop/Projects/matMultp/Method2.c
 	"Method2.h"
 	<pthread.h>
 
-1508340824 source:/home/aya/Desktop/Projects/matMultp/output_to_file.c
+1508409455 source:/home/aya/Desktop/Projects/matMultp/output_to_file.c
 	"output_to_file.h"
 
 1508403393 source:/home/aya/Desktop/Projects/matMultp/read_from_files.c

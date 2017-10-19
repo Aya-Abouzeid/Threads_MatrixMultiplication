@@ -1,4 +1,5 @@
 #include "read_from_files.h"
+#include "output_to_file.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -48,10 +49,19 @@ void multiplyMatrices(){                    //multiply the 2 matrices using seve
 
         if(aRows > 0 && aColumns > 0 && bRows > 0 && bColumns > 0 && aColumns == bRows) {       //checking for 0 dimentional matrices
 
+            printf("A- Multiplying using no threads:\n");
+//            printf("   Execution time: %d" , );
             multiplyNoThreads();
-//            useMethod1();
+            printf("\nB- Multiplying row by row:\n");
+            printf("   Number of threads used: %d\n" , aRows);
+//            printf("   Execution time: %d" , );
+            useMethod1();
+            printf("\nC- Multiplying element by element:\n");
+            printf("   Number of threads used: %d\n" , aRows*bColumns);
+//            printf("   Execution time: %d" , );
             useMethod2();
-
+            writeOutput1();             //print output of method 1 to file
+            writeOutput2();             //print output of method 2 to file
         } else {
             printf("Invalid matrices dimentions.\n");
         }

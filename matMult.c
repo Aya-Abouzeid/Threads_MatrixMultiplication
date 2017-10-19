@@ -36,7 +36,4 @@ void multiplyNoThreads(){         //multiply 2 matrices without threads
 
         printf("\n");
         }
-
-
-
 }
