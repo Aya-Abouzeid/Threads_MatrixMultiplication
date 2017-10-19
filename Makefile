@@ -1,4 +1,4 @@
-TARGET = matMultp
+TARGET = matmult.out
 LIBS = -lm
 CC = gcc
 CFLAGS = -g -Wall

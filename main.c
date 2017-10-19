@@ -2,12 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define _GNU_SOURCE
-
+#include <pthread.h>
 
 char *mat1Name;       //first matrix name
 char *mat2Name;       //second matrix name
 char *outMatName;     //output matrix name
+extern long aRows;                  //number of rows in Matrix A
+extern long aColumns;               //Number of columns in Matrix A
+extern long bRows;                  //number of rows in Matrix B
+extern long bColumns;               //number of columns in Matrix B
 
 int main(int argc, char *argv[])
 {
@@ -34,6 +37,23 @@ int main(int argc, char *argv[])
         }
 
          readMatrices(mat1Name , mat2Name);  //reading the 2 matrices files
+         multiplyMatrices();
 
+
+         pthread_exit(NULL);
     return 0;
+}
+
+void multiplyMatrices(){                    //multiply the 2 matrices using several methods
+
+        if(aRows > 0 && aColumns > 0 && bRows > 0 && bColumns > 0 && aColumns == bRows) {       //checking for 0 dimentional matrices
+
+            multiplyNoThreads();
+//            useMethod1();
+            useMethod2();
+
+        } else {
+            printf("Invalid matrices dimentions.\n");
+        }
+
 }

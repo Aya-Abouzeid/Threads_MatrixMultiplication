@@ -11,17 +11,33 @@ FILE *matBFile;                 //Matrix B file
 char line[1024];            //first line in the file
 long long **matA;           //matrix A
 long long **matB;           //matrix B
-
+long long **matC;                   //output matrix using no threads
+long long **matCMethod1;            //output matrix using no threads
+long long **matCMethod2;            //output matrix using no threads
+int iterator = 0;                   //for allocating rows in memory
 
 void readMatrices(char *mat1 , char *mat2){         //read matrices files
 
         readMatA(mat1);
         readMatB(mat2);
-        if(aRows > 0 && aColumns > 0 && bRows > 0 && bColumns > 0 && aColumns == bRows) {
+        allocateRows();
 
-            multiplyNoThreads(matA , matB);
+}
 
-            }
+void allocateRows(){
+
+     matC = malloc(aRows * sizeof(long long *));
+     matCMethod1 = malloc(aRows * sizeof(long long *));
+     matCMethod2 = malloc(aRows * sizeof(long long *));
+
+     for(iterator ; iterator < aRows ; iterator++){
+
+                matC[iterator] = malloc(bColumns * sizeof(long long));  //allocating memory space for a new row in matrix C using normal multiplication
+                matCMethod1[iterator] = malloc(bColumns * sizeof(long long));  //allocating memory space for a new row in matrix C of method 1
+                matCMethod2[iterator] = malloc(bColumns * sizeof(long long));  //allocating memory space for a new row in matrix C of method 2
+
+     }
+
 }
 
 void readMatA(char *mat){        //reading first matrix
@@ -39,7 +55,7 @@ void readMatA(char *mat){        //reading first matrix
                     matA[r] = malloc(aColumns * sizeof(long long));
                     c=0;
                     for(c ; c < aColumns ; c++){
-                        fscanf(matAFile , "%lld" , & matA[r][c]);
+                        fscanf(matAFile , "%lld" , & matA[r][c]);       //reading matrix element by element
                     }
                 }
                 fclose(matAFile);
@@ -60,7 +76,7 @@ void readMatB(char *mat){        //reading second matrix
                     matB[r] = malloc(bColumns * sizeof(long long));
                     c=0;
                     for(c ; c < bColumns ; c++){
-                        fscanf(matBFile , "%lld" , & matB[r][c]);
+                        fscanf(matBFile , "%lld" , & matB[r][c]);      //reading matrix element by element
                     }
                 }
                 fclose(matBFile);

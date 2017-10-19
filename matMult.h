@@ -2,7 +2,7 @@
 #define MATMULT_H
 
 
-void multiplyNoThreads(long long **matA, long long **matB);
+void multiplyNoThreads();
 
 
 #endif // MATMULT_H

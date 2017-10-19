@@ -1,4 +1,4 @@
-TARGET = Lab1
+TARGET = matMult.out
 LIBS = -lm
 CC = gcc
 CFLAGS = -g -Wall
