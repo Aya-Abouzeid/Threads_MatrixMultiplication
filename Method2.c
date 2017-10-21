@@ -38,16 +38,16 @@ void useMethod2(){               //use number of threads equal to number of elem
                      pthread_join(threads[i * bColumns + j], NULL);
             }
         }
-
-        int l=0 , m=0;
-        for(l ; l< aRows ; l++){
-            m=0;
-            for(m ; m<bColumns ; m++){
-                    printf("%lld  ", matCMethod2[l][m]);
-            }
-
-        printf("\n");
-        }
+                                            //For Printing Output To Console
+//        int l=0 , m=0;
+//        for(l ; l< aRows ; l++){
+//            m=0;
+//            for(m ; m<bColumns ; m++){
+//                    printf("%lld  ", matCMethod2[l][m]);
+//            }
+//
+//        printf("\n");
+//        }
         return;
 
 }

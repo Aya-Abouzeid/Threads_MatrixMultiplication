@@ -27,16 +27,16 @@ void useMethod1(){          //use number of threads equal to number of rows in t
         for (j = 0; j < aRows; j++) {
                      pthread_join(threads[j], NULL);
             }
-
-        int l=0 , m=0;
-        for(l ; l< aRows ; l++){
-            m=0;
-            for(m ; m<bColumns ; m++){
-                    printf("%lld  ", matCMethod1[l][m]);
-            }
-
-        printf("\n");
-        }
+                                                                    //Printing Output To Console
+//        int l=0 , m=0;
+//        for(l ; l< aRows ; l++){
+//            m=0;
+//            for(m ; m<bColumns ; m++){
+//                    printf("%lld  ", matCMethod1[l][m]);
+//            }
+//
+//        printf("\n");
+//        }
         return;
 }
 

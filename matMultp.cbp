@@ -13,8 +13,13 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-pthread" />
 					<Add directory="include" />
+					<Add directory="../matMultp" />
 				</Compiler>
+				<Linker>
+					<Add option="-pthread" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/matMultp" prefix_auto="1" extension_auto="1" />
@@ -24,6 +29,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="include" />
+					<Add directory="../matMultp" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -33,19 +39,29 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Method1.cpp" />
-		<Unit filename="Method2.cpp" />
-		<Unit filename="include/Method1.h" />
-		<Unit filename="include/Method2.h" />
-		<Unit filename="include/matMult.h" />
-		<Unit filename="include/output_to_file.h" />
-		<Unit filename="include/read_from_files.h" />
+		<Unit filename="Method1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Method1.h" />
+		<Unit filename="Method2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Method2.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="matMult.cpp" />
-		<Unit filename="output_to_file.cpp" />
-		<Unit filename="read_from_files.cpp" />
+		<Unit filename="matMult.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="matMult.h" />
+		<Unit filename="output_to_file.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="output_to_file.h" />
+		<Unit filename="read_from_files.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="read_from_files.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

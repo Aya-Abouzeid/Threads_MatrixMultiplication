@@ -27,13 +27,15 @@ void multiplyNoThreads(){         //multiply 2 matrices without threads
                                 matC[aRowsIterator][bColumnsIterator] = sumOfProduct;
                     }
         }
-        int i=0 , j=0;
-        for(i ; i< aRows ; i++){
-        j=0;
-            for(j ; j<bColumns ; j++){
-            printf("%lld  ", matC[i][j]);
-            }
+                                                            //For Printing Output To Console
 
-        printf("\n");
-        }
+//        int i=0 , j=0;
+//        for(i ; i< aRows ; i++){
+//        j=0;
+//            for(j ; j<bColumns ; j++){
+//            printf("%lld  ", matC[i][j]);
+//            }
+//
+//        printf("\n");
+//        }
 }

@@ -8,6 +8,8 @@ extern char *outMatName1;     //output matrix name for method 1
 extern char *outMatName2;     //output matrix name for method 2
 extern long aRows;                  //number of rows in Matrix A
 extern long bColumns;               //number of columns in Matrix B
+extern int time1seconds;        //time for method 1 execution in seconds
+extern int time2seconds;        //time for method 2 execution in seconds
 FILE *outMatFile1;                 //output matrix for method 1 file
 FILE *outMatFile2;                 //iutput matrix for method 2 file
 
@@ -18,8 +20,9 @@ writeOutput1(int threadNumber , int time){             //print output of method 
     if(outMatFile1!=NULL)
     {
         fprintf(outMatFile1 , "Multiplying row by row:\n\n");
-        fprintf(outMatFile1 , " Number of threads used: %d\n" , threadNumber);
-        fprintf(outMatFile1," Execution time(ms): %lu\n\n" ,  time );        // execution time
+        fprintf(outMatFile1 , " Number of threads used: %d\n\n" , threadNumber);
+        fprintf(outMatFile1," Execution time(s): %lu\n" ,  time1seconds );        // execution time
+        fprintf(outMatFile1," Execution time(us): %lu\n\n" ,  time );        // execution time
         int l=0 , m=0;
         for(l ; l< aRows ; l++){
             m=0;
@@ -42,8 +45,9 @@ writeOutput2(int threadNumber , int time){             //print output of method 
     if(outMatFile2!=NULL)
     {
         fprintf(outMatFile2 , "Multiplying element by element:\n \n");
-        fprintf(outMatFile2 , " Number of threads used: %d\n" , threadNumber);
-        fprintf(outMatFile2," Execution time(ms): %lu\n\n" ,  time );        // execution time
+        fprintf(outMatFile2 , " Number of threads used: %d\n\n" , threadNumber);
+        fprintf(outMatFile2," Execution time(s): %lu\n" ,  time2seconds );        // execution time
+        fprintf(outMatFile2," Execution time(us): %lu\n\n" ,  time );        // execution time
         int l=0 , m=0;
         for(l ; l< aRows ; l++){
             m=0;

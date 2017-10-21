@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <pthread.h>
+#include <stdbool.h>
+
 
 char *mat1Name;       //first matrix name
 char *mat2Name;       //second matrix name
@@ -14,8 +16,11 @@ extern long aColumns;               //Number of columns in Matrix A
 extern long bRows;                  //number of rows in Matrix B
 extern long bColumns;               //number of columns in Matrix B
 struct timeval stop, start;
-int time1;      //time for method 1 execution
-int time2;      //time for method 2 execution
+int time1;      //time for method 1 execution in micro
+int time2;      //time for method 2 execution in micro
+int time1seconds;        //time for method 1 execution in seconds
+int time2seconds;        //time for method 2 execution in seconds
+
 int main(int argc, char *argv[])
 {
 
@@ -46,8 +51,9 @@ int main(int argc, char *argv[])
 
         }
 
-         readMatrices(mat1Name , mat2Name);  //reading the 2 matrices files
-         multiplyMatrices();
+         if(readMatrices(mat1Name , mat2Name)){  //reading the 2 matrices files
+            multiplyMatrices();
+         }
          free(mat1Name);
          free(mat2Name);
          free(outMatName1);
@@ -79,7 +85,8 @@ void noThreads(){
         gettimeofday(&start, NULL);         //start time
         multiplyNoThreads();
         gettimeofday(&stop, NULL);          //End time
-        printf("   Execution time(ms): %lu\n" ,  stop.tv_usec - start.tv_usec );        //computing execution time
+        printf("   Execution time(s): %lu\n", stop.tv_sec - start.tv_sec);
+        printf("   Execution time(us): %lu\n" ,  stop.tv_usec - start.tv_usec );        //computing execution time
 
 
 }
@@ -91,7 +98,9 @@ void rowByRow(){
         useMethod1();
         gettimeofday(&stop, NULL);          //End time
         time1 = stop.tv_usec - start.tv_usec ;
-        printf("   Execution time(ms): %lu\n" ,  stop.tv_usec - start.tv_usec );        //computing execution time
+        time1seconds = stop.tv_sec - start.tv_sec;
+        printf("   Execution time(s): %lu\n", stop.tv_sec - start.tv_sec);
+        printf("   Execution time(us): %lu\n" ,  stop.tv_usec - start.tv_usec );        //computing execution time
 }
 void elementByElement(){
 
@@ -101,6 +110,8 @@ void elementByElement(){
         useMethod2();
         gettimeofday(&stop, NULL);          //End time
         time2 = stop.tv_usec - start.tv_usec ;
-        printf("   Execution time(ms): %lu \n" ,  stop.tv_usec - start.tv_usec );       //computing execution time
+        time2seconds = stop.tv_sec - start.tv_sec;
+        printf("   Execution time(s): %lu\n", stop.tv_sec - start.tv_sec);
+        printf("   Execution time(us): %lu \n" ,  stop.tv_usec - start.tv_usec );       //computing execution time
 
 }
